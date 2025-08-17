@@ -1,1 +1,2 @@
-# Statmodel_For_RadioIsotope_Contamination
+# A Statistical Model to Evaluate Radioisotope Contamination Data
+
