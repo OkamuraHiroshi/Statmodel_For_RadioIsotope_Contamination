@@ -15,6 +15,6 @@ We also provide a generalizable formula for quantitative risk evaluation under d
 Note (Windows users):
 The TMB package requires compilation of C++ code. On Windows, you need to install Rtools before using this program.
 
-- Download: CRAN Rtools page
+- Download: [CRAN Rtools page](https://cran.r-project.org/bin/windows/Rtools/rtools40.html)
 
-- After installation, restart R and ensure that Rtools is on your system PATH (https://cran.r-project.org/bin/windows/Rtools/rtools40.html). <br> Without Rtools, the installation or execution of TMB models may fail.
+- After installation, restart R and ensure that Rtools is on your system PATH. <br> Without Rtools, the installation or execution of TMB models may fail.
