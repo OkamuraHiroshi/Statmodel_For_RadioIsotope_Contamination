@@ -17,5 +17,5 @@ The TMB package requires compilation of C++ code. On Windows, you need to instal
 
 - Download: CRAN Rtools page
 
--After installation, restart R and ensure that Rtools is on your system PATH.
+- After installation, restart R and ensure that Rtools is on your system PATH.
 Without Rtools, the installation or execution of TMB models may fail.
