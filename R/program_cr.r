@@ -69,8 +69,7 @@ if (is.null(init_p)) {
 
   init_p[1:2] <- c(mod134$coef[1],mod137$coef[1])
   init_p[3:4] <- init_bb
-  init_p[5:6] <- log(-c(mod134$coef[2],mod137$coef[2]))
-  init_p[5:6] <- ifelse(is.na(init_p[5:6]),log(0.000001),init_p[5:6])
+  init_p[5:6] <- log(-pmin(c(mod134$coef[2],mod137$coef[2]),-0.000001))
   init_p[7:8] <- init_dd
   init_p[9:10] <- c(log(summary.lm(mod134)$sigma),log(summary.lm(mod137)$sigma))
   init_p[11] <- log(init_sigma_re)
