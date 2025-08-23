@@ -18,3 +18,5 @@ The TMB package requires compilation of C++ code. On Windows, you need to instal
 - Download: [CRAN Rtools page](https://cran.r-project.org/bin/windows/Rtools/rtools40.html)
 
 - After installation, restart R and ensure that Rtools is on your system PATH. <br> Without Rtools, the installation or execution of TMB models may fail.
+
+Example code is available in the [program folder](https://github.com/OkamuraHiroshi/Statmodel_For_RadioIsotope_Contamination/blob/main/R/Readme.txt).
