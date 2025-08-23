@@ -11,3 +11,11 @@ This page offers an R program tailored for survival analysis of radioisotope dat
 - separation of physical and biological processes in ecological half-life estimation.
 
 We also provide a generalizable formula for quantitative risk evaluation under detection limits.
+
+Note (Windows users):
+The TMB package requires compilation of C++ code. On Windows, you need to install Rtools before using this program.
+
+- Download: CRAN Rtools page
+
+-After installation, restart R and ensure that Rtools is on your system PATH.
+Without Rtools, the installation or execution of TMB models may fail.
