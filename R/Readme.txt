@@ -40,8 +40,8 @@ D <- c(10,50,100)
 ND <- length(D)
 TD <- as.Date(c("2017/04/01"))
 n_g <- c(1500,150)
-risk21_a <- sapply(1:ND, function(i) eval_risk(res21, threshold=D[i], Target_Date=TD, calc_se=TRUE, n_g=n_g, simulate=FALSE))
-risk21_s <- sapply(1:ND, function(i) eval_risk(res21, threshold=D[i], Target_Date=TD, calc_se=TRUE, Sim=1000, B=1000, simulate=TRUE))
+risk21_a <- sapply(1:ND, function(i) eval_risk(res21, threshold=D[i], Target_Date=TD, calc_se=TRUE, n_g=n_g, simulate=FALSE))       # using analytic formula
+risk21_s <- sapply(1:ND, function(i) eval_risk(res21, threshold=D[i], Target_Date=TD, calc_se=TRUE, Sim=1000, B=1000, simulate=TRUE))        # using simulation
 
 # plot cesium contaminations
 
