@@ -6,11 +6,14 @@ library(statmod)
 library(mvnfast)
 
 # data import
+# example_dat.csv must contain columns:
+#   Time (date), Cesium134, Cesium137, Censor134, Censor137
 
-dat <- read.csv("example_dat.csv")
-dat <- dat %>% mutate(across(Time, as.Date))
+dat <- read.csv("example_dat.csv")      # data include Time, contamination and censoring info for cesium-134 and cesium-137
+dat <- dat %>% mutate(across(Time, as.Date))      # transform Time into Date format
 
 # install program
+# program_cr.r defines functions: creg(), eval_risk(), predict_cs(), plot_risk(), halflife_estimator()
 
 source("program_cr.r")
 
@@ -36,10 +39,10 @@ res23 <- creg(dat, ignore_censor=TRUE, const_sigma=c(1,1))    # two-component mo
   
 # evaluate risk
 
-D <- c(10,50,100)
+D <- c(10,50,100)       # thresholds
 ND <- length(D)
-TD <- as.Date(c("2017/04/01"))
-n_g <- c(1500,150)
+TD <- as.Date(c("2017/04/01"))       # date for risk
+n_g <- c(1500,150)     # numbers of points for Gauss Hermite and Laguerre quadrature
 risk21_a <- sapply(1:ND, function(i) eval_risk(res21, threshold=D[i], Target_Date=TD, calc_se=TRUE, n_g=n_g, simulate=FALSE))       # using analytic formula
 risk21_s <- sapply(1:ND, function(i) eval_risk(res21, threshold=D[i], Target_Date=TD, calc_se=TRUE, Sim=1000, B=1000, simulate=TRUE))        # using simulation
 
@@ -65,3 +68,6 @@ p_risk1_2 <- plot_risk(res21, threshold=D[2], start_date="2011/3/11", end_date=T
 p_risk1_3 <- plot_risk(res21, threshold=D[3], start_date="2011/3/11", end_date=TD, simulate=TRUE, len=50)+labs(y=bquote(.("Prob(")~{{}^{134}*Cs}+{{}^{137}*Cs}~.("> ")~.(D[3])~.("Bq/kg)")))
 
 p2 <- cowplot::plot_grid(p_risk1_1, p_risk1_2, p_risk1_3, nrow=1)
+
+print(p1)
+print(p2)
