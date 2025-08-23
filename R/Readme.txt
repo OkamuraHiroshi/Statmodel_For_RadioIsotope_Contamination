@@ -56,7 +56,6 @@ p11 <- ggplot(dat, aes(x=Time, y=Cesium134))+geom_point(size=2,aes(shape=Censor1
 
 p12 <- ggplot(dat, aes(x=Time, y=Cesium137))+geom_point(size=2,aes(shape=Censor137, color=Censor137))+geom_line(data=dat2, aes(x=Time, y=pred_137), linewidth=1.5, color="blue")+scale_y_log10(labels = scales::label_number(accuracy=0.1))+labs(title=bquote(.("b) ") ~.("Example")~ .(": ")~{{}^{137}*Cs}),y=expression(paste({{}^{137}},"Cs",sep="")), shape="Censored", color="Censored")+theme_classic()+theme(legend.position = c(0.9,0.9), legend.justification = c(1,1))
 
-
 p1 <- cowplot::plot_grid(p11, p12)
 
 # plot risk projection
