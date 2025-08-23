@@ -281,9 +281,9 @@ if (fix_zero_risk) risk_est <- risk_se <- risk_lo <- risk_up <- 0 else{
   } else{
     require(statmod)
     if (length(n_g)==1) n_g <- rep(n_g, 2)
-    gauss_hermite <- gauss.quad(n_g[1],kind="hermite")      # ガウス・エルミート積分のnodeとweight
+    gauss_hermite <- gauss.quad(n_g[1],kind="hermite")      # node and weight for gauss-hermite quadratue
     g_her <- cbind(gauss_hermite$nodes, gauss_hermite$weights)
-    gauss_laguerre <- gauss.quad(n_g[2], "laguerre")      # ガウス・ラゲール積分のnodeとweight
+    gauss_laguerre <- gauss.quad(n_g[2], "laguerre")      # node and weight for gauss-laguerre quadratue
     g_lag <- cbind(gauss_laguerre$nodes, exp(gauss_laguerre$nodes)*gauss_laguerre$weights)
 
     loc_aa <- which(names(parms) %in% "aa")
