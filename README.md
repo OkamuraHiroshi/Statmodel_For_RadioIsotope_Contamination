@@ -10,7 +10,7 @@ This page offers an R program tailored for survival analysis of radioisotope dat
 
 - separation of physical and biological processes in ecological half-life estimation.
 
-We also provide a generalizable formula for quantitative risk evaluation under detection limits.
+The program also provides code for quantitative risk evaluation under detection limits, enabling assessment of when the combined concentration of cesium-134 and cesium-137 exceeds a specified threshold.
 
 Note (Windows users):
 The TMB package requires compilation of C++ code. On Windows, you need to install Rtools before using this program.
